@@ -11,7 +11,7 @@ function Index() {
     <React.Fragment>
       <Reset />
       <Layout>
-        <Text fontSize="32px">Hello, Herm! from aminukano</Text>
+        <Text fontSize="32px" fontWeight="bold" color="green">Hello, Herm! from aminukano</Text>
       </Layout>
     </React.Fragment>
   );
