@@ -1,33 +1,27 @@
-import Link from 'next/link'
-import { withRouter } from 'next/router'
+import React from 'react';
+import { Box, Flex, LogoIcon, User } from 'herm';
 
-const Header = ({ router: { pathname } }) => (
-  <header>
-    <Link href="/">
-      <a className={pathname === '/' ? 'is-active' : ''}>Home</a>
-    </Link>
-    <Link href="/client-only">
-      <a className={pathname === '/client-only' ? 'is-active' : ''}>
-        Client-Only
-      </a>
-    </Link>
-    <Link href="/about">
-      <a className={pathname === '/about' ? 'is-active' : ''}>About</a>
-    </Link>
-    <style jsx>{`
-      header {
-        margin-bottom: 25px;
-      }
-      a {
-        font-size: 14px;
-        margin-right: 15px;
-        text-decoration: none;
-      }
-      .is-active {
-        text-decoration: underline;
-      }
-    `}</style>
-  </header>
-)
+function Header() {
+  return (
+    <Box backgroundColor="#fafafb" paddingLeft="50px" paddingRight="50px">
+      <Flex alignItems="center" justifyContent="space-between" height="50px">
+        <LogoIcon></LogoIcon>
+        <User
+          username="Aminu Kano"
+          sub="Scheduled for 18th January at 04:31 AM"
+        >
+          <Flex alignItems="center">
+            <Box>
+              <User.Avatar></User.Avatar>
+            </Box>
+            <Box marginLeft="12px">
+              <User.Username></User.Username>
+            </Box>
+          </Flex>
+        </User>
+      </Flex>
+    </Box>
+  );
+}
 
-export default withRouter(Header)
+export default Header;
